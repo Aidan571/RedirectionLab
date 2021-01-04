@@ -10,4 +10,25 @@ public class PigLatin{
     result = s.substring(1,length) + s.charAt(0) + "ay";
     return result;
   }
+
+  public static String pigLatin(String s){
+    int length = s.length();
+    String result;
+    if(s.charAt(0) == 'a' | s.charAt(0) == 'e' | s.charAt(0) == 'i' | s.charAt(0) == 'o' | s.charAt(0) == 'u'){
+      result = s + "hay";
+      return result;
+    }
+    else if(s.substring(0,2).equals("bl") | s.substring(0,2).equals("br") | s.substring(0,2).equals("ch") | s.substring(0,2).equals("ck") | s.substring(0,2).equals("cl") | s.substring
+    (0,2).equals("cr") | s.substring(0,2).equals("dr") | s.substring(0,2).equals("fl") | s.substring(0,2).equals("fr") | s.substring(0,2).equals("gh") | s.substring(0,2).equals
+    ("gl") | s.substring(0,2).equals("gr") | s.substring(0,2).equals("ng") | s.substring(0,2).equals("ph") | s.substring(0,2).equals("pl") | s.substring(0,2).equals("pr") | s.
+    substring(0,2).equals("qu") | s.substring(0,2).equals("sc") | s.substring(0,2).equals("sh") | s.substring(0,2).equals("sk") | s.substring(0,2).equals("sl") | s.substring(0,2).equals
+    ("sm") | s.substring(0,2).equals("sn") | s.substring(0,2).equals("sp") | s.substring(0,2).equals("st") | s.substring(0,2).equals("sw") | s.substring(0,2).equals("th") | s.
+    substring(0,2).equals("tr") | s.substring(0,2).equals("tw") | s.substring(0,2).equals("wh") | s.substring(0,2).equals("wr")){
+      result = s.substring(2,length) + s.substring(0,2) + "ay";
+      return result;
+    }
+    else
+    result = s.substring(1,length) + s.charAt(0) + "ay";
+    return result;
+  }
 }
