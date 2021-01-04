@@ -1,3 +1,4 @@
+import java.util.*;
 public class PigLatin{
   public static String pigLatinSimple(String s){
     int length = s.length();
@@ -35,7 +36,7 @@ public class PigLatin{
   public static String pigLatinBest(String s){
     int length = s.length();
     String result;
-    if(s.charAt(0) < 97){
+    if((s.charAt(0) < 65) | (s.charAt(0) > 91 && s.charAt(0) < 97) | (s.charAt(0) > 122)){
       return s;
     }
     else if(s.charAt(0) == 'a' | s.charAt(0) == 'e' | s.charAt(0) == 'i' | s.charAt(0) == 'o' | s.charAt(0) == 'u'){
@@ -70,5 +71,23 @@ public class PigLatin{
     }
     result = s.substring(1,length) + s.charAt(0) + "ay";
     return result;
+  }
+
+  public static void main(String[]args){
+    Scanner n = new Scanner(System.in);
+    while(n.hasNextLine()){
+      String a = n.nextLine();
+      Scanner m = new Scanner(a);
+      while(m.hasNext()){
+        String b = m.next();
+        String holder = b;
+        if(b.charAt(0) > 64 && b.charAt(0) < 91){
+          b = Character.toLowerCase(holder.charAt(0)) + holder.substring(1,holder.length());
+        }
+        System.out.print(pigLatinBest(b));
+        System.out.print(" ");
+      }
+      System.out.println();
+    }
   }
 }
